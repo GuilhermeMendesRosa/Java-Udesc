@@ -2,27 +2,27 @@ package score.model;
 
 import score.util.Output;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Screen {
 
-    List<GameEntry> gameEntries = new ArrayList<GameEntry>();
+    private final Set<GameEntry> gameEntries = new TreeSet<GameEntry>();
 
     public void addGameEntry(GameEntry gameEntry) {
         this.gameEntries.add(gameEntry);
     }
 
     public void showRanking() {
-        Collections.sort(this.gameEntries);
-
         Output.breakLine();
-        for (int i = 0; i < gameEntries.size(); i++) {
-            System.out.printf("%dº: %s%n", i + 1, gameEntries.get(i).toString());
+
+        int position = 1;
+        for (GameEntry gameEntry : gameEntries) {
+            System.out.printf("%dº: %s%n", position, gameEntry.toString());
+            position++;
         }
-        Output.breakLine();
 
+        Output.breakLine();
     }
 
 }
