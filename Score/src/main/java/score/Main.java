@@ -18,7 +18,7 @@ public class Main {
 
                 screen.addGameEntry(new GameEntry(name, score));
             } catch (Exception e) {
-                System.out.println("Não foi possível adicionar esse GameEntry!");
+                System.out.println("[ERROR] Não foi possível adicionar esse GameEntry!");
             }
         }
 
