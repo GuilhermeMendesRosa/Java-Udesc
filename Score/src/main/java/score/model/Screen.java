@@ -17,7 +17,7 @@ public class Screen {
         Output.breakLine();
 
         int position = 1;
-        for (GameEntry gameEntry : gameEntries) {
+        for (GameEntry gameEntry : this.gameEntries) {
             System.out.printf("%dº: %s%n", position, gameEntry.toString());
             position++;
         }
