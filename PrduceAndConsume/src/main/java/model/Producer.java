@@ -11,7 +11,7 @@ public class Producer {
 
     public void produce() {
         for (int i = 0; i < 100; i++) {
-            this.buffer.pushNumber(new Random().nextInt());
+            this.buffer.pushNumber(new Random().nextInt(50) + 1);
         }
     }
 

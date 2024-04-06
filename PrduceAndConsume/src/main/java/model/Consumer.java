@@ -9,12 +9,17 @@ public class Consumer {
 
     public void consume() {
         while (true) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ignored) {
+            }
+
             if (this.buffer.isEmpty()) {
                 continue;
             }
 
-            Integer i = this.buffer.popNumber();
-            Integer product = i * 10;
+            Integer number = this.buffer.popNumber();
+            Integer product = number * 10;
             System.out.printf("O valor do buffer x 10 = %d\n", product);
         }
     }

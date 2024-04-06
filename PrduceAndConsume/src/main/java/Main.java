@@ -9,11 +9,7 @@ public class Main {
         Producer producer = new Producer(buffer);
         Consumer consumer = new Consumer(buffer);
 
-        new Thread(() -> {
-            producer.produce();
-        }).start();
-        new Thread(() -> {
-            consumer.consume();
-        }).start();
+        new Thread(producer::produce).start();
+        new Thread(consumer::consume).start();
     }
 }
