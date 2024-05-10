@@ -17,7 +17,7 @@ public class ContactController {
     private ContactService contactService;
 
     @GetMapping("/{id}")
-    public ResponseEntity findById(@PathVariable Long id) {
+    public ResponseEntity<Contact> findById(@PathVariable Long id) {
         try {
             Contact contact = this.contactService.findById(id);
             return ResponseEntity.ok(contact);
@@ -38,7 +38,7 @@ public class ContactController {
     }
 
     @GetMapping
-    public ResponseEntity list() {
+    public ResponseEntity<List<Contact>> list() {
         try {
             List<Contact> contacts = this.contactService.list();
 
@@ -49,7 +49,7 @@ public class ContactController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity edit(@PathVariable Long id, @RequestBody Contact newVersion) {
+    public ResponseEntity<Contact> edit(@PathVariable Long id, @RequestBody Contact newVersion) {
         try {
             Contact contact = this.contactService.edit(id, newVersion);
             return ResponseEntity.ok(contact);
