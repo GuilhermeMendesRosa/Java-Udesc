@@ -61,4 +61,5 @@ public class Contact implements Comparable<Contact> {
     public int compareTo(Contact other) {
         return this.id.compareTo(other.getId());
     }
+
 }
